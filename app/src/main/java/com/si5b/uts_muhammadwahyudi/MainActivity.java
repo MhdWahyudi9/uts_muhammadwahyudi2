@@ -9,39 +9,34 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
-    private EditText et_NL,et_NP;
-    private Button btn_DAFTAR;
-    private CheckBox cb_facebook,cb_instagram,cb_website;
+    private EditText etnlengkap,etnpendaftaran,;
+    private Button btndaftar;
+    private CheckBox cbfacebook,cbinstagram,cbwebsite;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        et_NL = findViewById(R.id.et_NL);
-        et_NP = findViewById(R.id.et_NP);
-        cb_facebook = findViewById(R.id.cb_facebook);
-        cb_instagram = findViewById(R.id.cb_instagram);
-        cb_website = findViewById(R.id.cb_website);
-        btn_DAFTAR = findViewById(R.id.btn_DAFTAR);
-        btn_DAFTAR.setOnClickListener(new View.OnClickListener() {
+        etnlengkap = findViewById(R.id.et_nlengkap);
+        etnpendaftaran = findViewById(R.id.et_npendaftaran);
+        cbfacebook = (CheckBox)findViewById(R.id.cb_facebook);
+        cbinstagram = (CheckBox)findViewById(R.id.cb_instagram);
+        cbwebsite = (CheckBox)findViewById(R.id.cb_website);
+        btn = findViewById(R.id.btn_daftar);
+
+        btndaftar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String NL, NP, DAFTAR, facebook, instagram, website;
-                int selectedID;
-                NL = et_NL.getText().toString();
-                NP = et_NP.getText().toString();
-                DAFTAR = btn_DAFTAR.getText().toString();
-                facebook = cb_facebook.getText().toString();
-                instagram = cb_instagram.getText().toString();
-                website = cb_website.getText().toString();
+                nlengkap = etnlengkap.getText().toString();
+                etnpendaftaran = etnpendaftaran.getText().toString();
 
-                if (NL.trim().equals("")) {
-                    et_NL.setError("Error");
+                if (nlengkap.trim().equals("")) {
+                    etnlengkap.setError("Tidak Boleh Kosong");
                 }
 
-                else if (NP.trim().equals("")) {
-                        et_NL.setError("Error");
+                else if (npendaftaran.trim().equals("")) {
+                        etnpendaftaran.setError("Tidak Boleh Kosong");
                 }
 
             }
